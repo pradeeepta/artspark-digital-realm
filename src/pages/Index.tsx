@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import HeroSection from "@/components/home/HeroSection";
+import FeaturedSection from "@/components/home/FeaturedSection";
+import CtaSection from "@/components/home/CtaSection";
+import { featuredNfts, latestNfts } from "@/data/mock-nfts";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div>
+      <HeroSection />
+      
+      <FeaturedSection 
+        title="Featured Artworks"
+        description="Discover the most exceptional digital artworks handpicked by our curation team."
+        nfts={featuredNfts}
+        viewAllLink="/explore"
+      />
+      
+      <FeaturedSection 
+        title="Latest Creations"
+        description="Explore the freshest NFTs that have just been minted on our platform."
+        nfts={latestNfts.slice(0, 3)}
+        viewAllLink="/explore"
+      />
+      
+      <CtaSection />
     </div>
   );
 };
